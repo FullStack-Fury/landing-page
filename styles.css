@@ -461,7 +461,7 @@ nav {
 
 .experience__container :is(.section__subheader, .section__header) {
     text-align: center;
-    max-width: 600px;
+    max-width: 40%;
     margin-inline: auto;
 }
 
@@ -477,10 +477,7 @@ nav {
     padding-bottom: 10px;
 }
 
-
-
 .experience__card {
-
     max-width: 200px;
     padding: 1rem;
     border-radius: 15px;
@@ -518,6 +515,23 @@ nav {
     margin-left: 3.5rem;
 }
 
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .experience__content {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;
+    }
+
+    .experience__card {
+        max-width: 50%;
+        margin-inline: auto;
+    }
+
+    .card-1, .card-2, .card-3 {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
 .arrival__grid {
     display: grid;
     margin-top: 4rem;
