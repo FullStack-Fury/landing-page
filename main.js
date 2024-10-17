@@ -26,9 +26,6 @@ const swiper = new Swiper(".swiper", {
     loop: true,
 });
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
 
