@@ -343,61 +343,73 @@ nav {
     overflow: hidden;
 }
 
-.about__section{
-    display:grid;
+.header__image img{
+    max-width: 575px;
+    margin-inline-start: auto;
+}
+.about__section {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 1rem;
     overflow: hidden;
     background-color: white;
     border-radius: 50px;
-
     max-width: 800px;
     margin: auto;
     padding: 5rem 1rem;
 }
 
-.header__image img{
-    max-width: 575px;
-    margin-inline-start: auto;
-}
-
 .about__image {
     grid-column: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about__content {
     grid-column: 2 / 3;
-    grid-row: 1/2;
+    grid-row: 1 / 2;
+    text-align: center;
 }
-
 
 .about__content h2 {
-    text-align: left;
-}
-
-.about__content p {
-    margin-right: 22rem;
-}
-
-
-
-
-
-.about__image img{
-    max-width: 575px;
-    margin-inline-start: auto;
-    border-radius: 10px; /* Bordes redondeados en la imagen */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
-    height: 400px;
-}
-
-.about__section h2{
+    text-align: center;
     margin-left: 30px;
     margin-right: 30px;
 }
-.about__section p {
+
+.about__content p {
     margin-left: 1px;
     margin-right: 30px;
+}
+
+.about__image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .about__section {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+
+    .about__content,
+    .about__image {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        text-align: center;
+    }
+
+    .about__content p {
+        margin: 60px;
+    }
+
+    .about__image img {
+        max-width: 80%;
 }
 
 .header__content{
