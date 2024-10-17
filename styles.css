@@ -898,10 +898,11 @@ nav {
     max-width: fit-content;
     margin-inline: auto;
 }
+
 footer {
     background-color: var(--primary-color-dark);
     color: #fff;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .footer-container {
@@ -913,16 +914,25 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .footer-col {
     flex: 1;
     padding: 15px;
     min-width: 220px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-col:hover {
+    transform: translateY(-5px);
 }
 
 .footer-col h4 {
     margin-top: 0;
+    font-size: 18px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
 }
 
 .footer-col ul {
@@ -937,12 +947,39 @@ footer {
 .footer-col ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 .footer-col ul li a:hover {
+    color: var(--primary-color-light); /* Cambio de color al hover */
     text-decoration: underline;
 }
 
+.footer-social {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.footer-social a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    color: var(--primary-color-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+    }
+    .footer-social {
+        padding-top: 30px;
+    }
+}
 
 @media (width > 540px) {
 
@@ -1069,19 +1106,19 @@ footer {
 
     .header__content h1,
     .header__content .section__description {
-        text-align: left; /* Alinea los títulos a la izquierda */
-        margin-left: 50px; /* Elimina cualquier margen izquierdo adicional */
+        text-align: left;
+        margin-left: 50px;
     }
 
     .about__section h1,
     .about__section p {
-        text-align: left; /* Alinea los títulos a la izquierda */
+        text-align: left; 
         margin-left: 30px;
         margin-top: 30px;
     }
 
     .header__btns {
-        align-self: flex-start; /* Alinea los botones a la izquierda */
+        align-self: flex-start;
         margin-left: 200px;
     }
 
