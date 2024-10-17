@@ -532,10 +532,13 @@ nav {
         grid-row: auto;
     }
 }
+
+
 .arrival__grid {
     display: grid;
     margin-top: 4rem;
     gap: 1rem;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas para pantallas grandes */
 }
 
 .arrival__card {
@@ -547,7 +550,6 @@ nav {
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     border-radius: 1rem;
-
 }
 
 .arrival__card:hover {
@@ -557,14 +559,17 @@ nav {
 
 .arrival__card span {
     position: absolute;
-    padding: 5px 1rem;
-    top: 1rem;
-    right: 1rem;
-    padding: 5px 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--white);
-    background-color: var(--primary-color);
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .arrival__grid {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+
+    .arrival__card {
+        margin-bottom: 1rem; /* Espacio entre las tarjetas */
+    }
 }
 
 .arrival__card img {
@@ -1249,7 +1254,9 @@ button:hover {
     padding: 0 300px;
     margin-bottom: 50px;
     margin-top: 50px;
+    text-align: center;
 }
+
 .dashboard-description {
     background: linear-gradient(90deg, #7ed56f, #ffd700);
     -webkit-background-clip: text;
@@ -1257,20 +1264,17 @@ button:hover {
     line-height: 1.5;
     color: #333333;
     padding: 0 200px;
+    text-align: center;
 }
-
 
 .mi-imagen {
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: 0 200px;
     border-radius: 20%;
     margin-top: 50px;
     margin-bottom: 100px;
 }
-
-
-
 
 .dashboard-admin {
     padding: 20px;
@@ -1278,13 +1282,39 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: linear-gradient(to right, #ffefba, #ffffff);
-
+    text-align: center;
 }
 
 .dashboard-education {
-    padding: 20px;
-    margin: 20px 0;
+    text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #f0f8ff;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .dashboard-subtitle {
+        font-size: 30px;
+        padding: 0 20px;
+    }
+
+    .dashboard-description {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    .mi-imagen {
+        padding: 0 20px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    .dashboard-admin,
+    .dashboard-education {
+        padding: 10px;
+        margin: 10px 0;
+    }
 }
